@@ -9,12 +9,12 @@ import UserProfile from './pages/UserProfile';
 import Header from './components/Header';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAKxHhuh3Y4BSMg-AoA3HpF5GtdeQf9Qqk",
-  authDomain: "exercise-6-8daad.firebaseapp.com",
-  projectId: "exercise-6-8daad",
-  storageBucket: "exercise-6-8daad.appspot.com",
-  messagingSenderId: "720595367360",
-  appId: "1:720595367360:web:46f3a9f385585feb22c425"
+  apiKey: "AIzaSyCbvOmvWwmOGqTW9QGMxnCqSU-q2qTwIhY",
+  authDomain: "final-project-a7334.firebaseapp.com",
+  projectId: "final-project-a7334",
+  storageBucket: "final-project-a7334.appspot.com",
+  messagingSenderId: "956763607467",
+  appId: "1:956763607467:web:66ab9ddd2844fe5519c2ee"
 };
 
 
