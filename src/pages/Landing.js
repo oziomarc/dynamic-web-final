@@ -1,22 +1,17 @@
-import React from "react";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import Header from "../components/Header";
 
-function UserProfile({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) {
+function Landing({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(!isLoggedIn && !isLoading) navigate('/login');
+        if(!isLoggedIn && !isLoading) navigate('/');
     }, [isLoggedIn, isLoading, navigate])
 
     return (
         <>
-            <Header
-                isLoggedIn={isLoggedIn} 
-                setIsLoggedIn={setIsLoggedIn}
-                setUserInfo={setUserInfo}
-            />
+            
             <div className="pageWrapper">
                 <h1>User Profile</h1>
                 <p><strong>Display Name: </strong>{userInfo.displayName}</p>
@@ -27,4 +22,4 @@ function UserProfile({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInf
     )
 }
 
-export default UserProfile
+export default Landing

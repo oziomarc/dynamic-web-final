@@ -3,10 +3,13 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import {initializeApp} from "firebase/app"
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import './App.css';
-import CreateUser from './pages/CreateUser';
+import Signup from './pages/Signup';
 import LoginPage from './pages/Login';
-import UserProfile from './pages/UserProfile';
+import Profile from './pages/Profile';
 import Header from './components/Header';
+import Dashboard from "./pages/Dashboard";
+import Createpost from "./pages/Createpost";
+import Landing from "./pages/Landing";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCbvOmvWwmOGqTW9QGMxnCqSU-q2qTwIhY",
@@ -50,7 +53,17 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <UserProfile 
+      element: <Landing // maybe don't need this if user is logged in? 
+        isLoading={isLoading}
+        userInfo={userInfo}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        setUserInfo={setUserInfo}
+      />
+    },
+    {
+      path: "/me",
+      element: <Profile 
         isLoading={isLoading}
         userInfo={userInfo}
         isLoggedIn={isLoggedIn}
@@ -66,9 +79,29 @@ function App() {
       setUserInfo={setUserInfo} />
     },
     {
+      path: "/sign-up",
+      element: 
+        <Signup 
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        setUserInfo={setUserInfo}
+        />
+      ,
+    },
+    {
+      path: "/dashboard",
+      element: 
+        <Dashboard 
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        setUserInfo={setUserInfo}
+        />
+      ,
+    },
+    {
       path: "/create",
       element: 
-        <CreateUser 
+        <Createpost 
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setUserInfo={setUserInfo}

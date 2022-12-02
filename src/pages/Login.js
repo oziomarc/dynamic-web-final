@@ -9,7 +9,7 @@ function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInfo }) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(isLoggedIn) navigate('/');
+        if(isLoggedIn) navigate('/dashboard');
     }, [isLoggedIn, navigate])
 
     const loginUser = useCallback((e) => {
@@ -41,11 +41,7 @@ function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInfo }) {
 
     return (
         <>
-            <Header 
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-                setUserInfo={setUserInfo}
-            />
+            
             <div className="pageWrapper">
                 <h1>Login</h1>
                 <LoginForm 

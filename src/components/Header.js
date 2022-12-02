@@ -3,6 +3,13 @@ import { getAuth, signOut } from "firebase/auth"
 
 function Header({ setIsLoggedIn, setUserInfo, isLoggedIn }) {
 
+    const current = new Date();
+    const date = current.getDate();
+    const day = current.toLocaleString('en-us', {  weekday: 'long' });
+    const month = current.toLocaleString('en-us', {  month: 'long' });
+
+    const formattedDate = `${day}, ${month} ${date}`;
+    const formattedTime = `${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`;
     function logOut() {
         const auth = getAuth()
         signOut(auth).then(() => {
@@ -16,10 +23,13 @@ function Header({ setIsLoggedIn, setUserInfo, isLoggedIn }) {
     return (
         <header>
             <nav>
-                {isLoggedIn && <a href="/"><p>Home</p></a>}
-                {!isLoggedIn && <a href="/login"><p>Login</p></a>}
-                {!isLoggedIn && <a href="/create"><p>Create User</p></a>}
-                {isLoggedIn && <a href="/login"><p onClick={() => logOut()}>Log Out</p></a>}
+                <p>{formattedDate.toLowerCase()}</p>
+                <p>{formattedTime}</p>
+                <a href="/landing"><p onClick={() => logOut()}>sign out</p></a>
+                <a href="/dashboard"><p>dashboard</p></a>
+                <a href="/create"><p>pen</p></a>
+                <a href="/me"><p>user</p></a>
+                
             </nav>
         </header>
         

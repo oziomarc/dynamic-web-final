@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 import CreateUserForm from "../components/CreateUserForm";
 import Header from "../components/Header";
 
-function CreateUser({setIsLoggedIn, setUserInfo, isLoggedIn}) {
+function Signup({setIsLoggedIn, setUserInfo, isLoggedIn}) {
     const [errors, setErrors] = useState();
     const navigate = useNavigate()
 
@@ -44,11 +44,7 @@ function CreateUser({setIsLoggedIn, setUserInfo, isLoggedIn}) {
 
     return (
         <>
-            <Header 
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-                setUserInfo={setUserInfo}
-            />
+            
             <div className="pageWrapper">
                 <h1>Create User</h1>
                 <CreateUserForm signUpUser={signUpUser}/>
@@ -58,4 +54,4 @@ function CreateUser({setIsLoggedIn, setUserInfo, isLoggedIn}) {
     )
 }
 
-export default CreateUser
+export default Signup
