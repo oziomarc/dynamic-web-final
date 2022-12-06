@@ -7,7 +7,7 @@ function Dashboard({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(!isLoggedIn && !isLoading) navigate('/');
+        if(!isLoggedIn && !isLoading) navigate('/dashboard');
     }, [isLoggedIn, isLoading, navigate])
 
     return (

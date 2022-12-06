@@ -29,10 +29,10 @@ function Header({ isLoggedIn, userInfo, setIsLoggedIn, setUserInfo }) {
                     <p>{formattedDate.toLowerCase()}</p>
                     <p>{formattedTime}</p>
                     {isLoggedIn && <a href="/"><button onClick={() => logOut()}>sign out</button></a>}
-                    {isLoggedIn && <a href="/dashboard"><p>dashboard</p></a>}
-                    
-                    <a href="/create"><p>pen</p></a>
-                    <a href="/me"><p>user</p></a>
+
+                    {isLoggedIn && <a href="/dashboard"><button>dashboard</button></a>}
+                    <a href="/create"><button>create</button></a>
+                    <a href="/me"><button>user</button></a>
                     
                 </nav>
             </header>

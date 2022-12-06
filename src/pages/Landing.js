@@ -29,6 +29,11 @@ function Landing({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) 
                         </button>
                     </Link>
                 </div>
+                <div className="hero-images">
+                    <img></img>
+                    <img></img>
+                    <img></img>
+                </div>
             </div>
         </>
     )
