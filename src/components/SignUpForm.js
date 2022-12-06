@@ -1,12 +1,14 @@
 import React from "react";
 
-function CreateUserForm({signUpUser}) {
+function SignUpForm({signUpUser}) {
     return (
         <form className="FormElement" onSubmit={(e) => signUpUser(e)}>
             <label htmlFor="email">Email</label>
             <input type="email" name="email" />
+
             <label htmlFor="displayName">Display Name</label>
             <input type="text" name="displayName" />
+
             <label htmlFor="password">Password</label>
             <input type="password" name="password" />
 
@@ -15,4 +17,4 @@ function CreateUserForm({signUpUser}) {
     )
 }
 
-export default CreateUserForm;
+export default SignUpForm;

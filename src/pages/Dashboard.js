@@ -7,7 +7,7 @@ function Dashboard({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(!isLoggedIn && !isLoading) navigate('/login');
+        if(!isLoggedIn && !isLoading) navigate('/');
     }, [isLoggedIn, isLoading, navigate])
 
     return (
@@ -16,9 +16,10 @@ function Dashboard({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}
                 isLoggedIn={isLoggedIn} 
                 setIsLoggedIn={setIsLoggedIn}
                 setUserInfo={setUserInfo}
+                userInfo={userInfo}
             />
             <div className="pageWrapper">
-                
+                <h1>Dashboard</h1>
             </div>
         </>
     )

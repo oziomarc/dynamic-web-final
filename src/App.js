@@ -6,7 +6,6 @@ import './App.css';
 import Signup from './pages/Signup';
 import LoginPage from './pages/Login';
 import Profile from './pages/Profile';
-import Header from './components/Header';
 import Dashboard from "./pages/Dashboard";
 import Createpost from "./pages/Createpost";
 import Landing from "./pages/Landing";
@@ -95,6 +94,7 @@ function App() {
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setUserInfo={setUserInfo}
+        userInfo={userInfo}
         />
       ,
     },

@@ -43,6 +43,8 @@ function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInfo }) {
         <>
             
             <div className="pageWrapper">
+                <h1>Carta</h1>
+                <h6>discover another</h6>
                 <h1>Login</h1>
                 <LoginForm 
                 loginUser={loginUser}/>
