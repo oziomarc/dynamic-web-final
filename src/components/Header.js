@@ -25,15 +25,17 @@ function Header({ isLoggedIn, userInfo, setIsLoggedIn, setUserInfo }) {
         <>
             <header>
                 <nav>
-                    <p><strong>Hello, </strong>{userInfo.displayName}</p>
-                    <p>{formattedDate.toLowerCase()}</p>
-                    <p>{formattedTime}</p>
-                    {isLoggedIn && <a href="/"><button onClick={() => logOut()}>sign out</button></a>}
-
-                    {isLoggedIn && <a href="/dashboard"><button>dashboard</button></a>}
-                    <a href="/create"><button>create</button></a>
-                    <a href="/me"><button>user</button></a>
-                    
+                    <div className="leftnav">
+                        <h3>hello, {userInfo.displayName}</h3>
+                        <p>{formattedDate.toLowerCase()}</p>
+                        <p>{formattedTime}</p>
+                        {isLoggedIn && <a href="/"><button onClick={() => logOut()}>sign out</button></a>}
+                    </div>
+                    <div className="rightnav">
+                        {isLoggedIn && <a href="/dashboard"><img src={require('src/files/dashboard-icon.png')} alt="dashboard icon" /></a>}
+                        <a href="/create"><img src="files/feather-icon.png" alt="write icon"/></a>
+                        <a href="/me"><img src="files/smile-icon.png" alt="profile icon"/></a>
+                    </div>
                 </nav>
             </header>
         </>

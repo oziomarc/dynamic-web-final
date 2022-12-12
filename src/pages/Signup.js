@@ -58,8 +58,8 @@ function Signup({setIsLoggedIn, setUserInfo, isLoggedIn}) {
             
             <div className="pageWrapper">
                 <h1>Carta</h1>
-                <h6>discover another</h6>
-                <h1>Sign Up</h1>
+                <h6>discover one another</h6>
+                <h3>Sign Up</h3>
                 <SignUpForm signUpUser={signUpUser}/>
                 <p>{errors}</p>
             </div>

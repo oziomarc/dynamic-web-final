@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router";
 import { Link } from 'react-router-dom';
 import { useEffect } from "react";
-import Header from "../components/Header";
-import LoginForm from "../components/LoginForm";
-import CreateUserForm from "../components/SignUpForm";
 
 function Landing({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) {
     const navigate = useNavigate()
@@ -16,7 +13,7 @@ function Landing({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) 
         <>
             <div className="pageWrapper">
                 <h1>Carta</h1>
-                <h6>discover another</h6>
+                <h6>discover one another</h6>
                 <div className="buttonContainer">
                     <Link to="/login">
                         <button type="button">

@@ -102,6 +102,7 @@ function App() {
       path: "/create",
       element: 
         <Createpost 
+        app={initializeApp}
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setUserInfo={setUserInfo}
