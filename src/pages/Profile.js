@@ -19,9 +19,13 @@ function Profile({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) 
                 userInfo={userInfo}
             />
             <div className="pageWrapper">
-                <h1>User Profile</h1>
-                <p><strong>Display Name: </strong>{userInfo.displayName}</p>
-                <p><strong>Email: </strong>{userInfo.email}</p>
+                <div className="profilePage">
+                    <p>{userInfo.displayName}'s letters:</p>
+                    <div className="lettersWrapper"></div>
+                    <p>{userInfo.displayName}'s likes:</p>
+                    <div className="likesWrapper"></div>
+                </div>
+                
             </div>
         </>
     )

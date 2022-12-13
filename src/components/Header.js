@@ -1,5 +1,8 @@
 import React from "react";
 import { getAuth, signOut } from "firebase/auth"
+import dashboardimg from "../dashboard-icon.png"
+import featherimg from "../components/files/feather-icon.png"
+import smileimg from "../components/files/smile-icon.png"
 
 function Header({ isLoggedIn, userInfo, setIsLoggedIn, setUserInfo }) {
     const current = new Date();
@@ -32,9 +35,9 @@ function Header({ isLoggedIn, userInfo, setIsLoggedIn, setUserInfo }) {
                         {isLoggedIn && <a href="/"><button onClick={() => logOut()}>sign out</button></a>}
                     </div>
                     <div className="rightnav">
-                        {isLoggedIn && <a href="/dashboard"><img src={require('src/files/dashboard-icon.png')} alt="dashboard icon" /></a>}
-                        <a href="/create"><img src="files/feather-icon.png" alt="write icon"/></a>
-                        <a href="/me"><img src="files/smile-icon.png" alt="profile icon"/></a>
+                        {isLoggedIn && <a href="/dashboard"><img id="dash-img" src={dashboardimg} style={{ width: 50, height: 50 }} alt="dashboard icon" title="dashboard"/></a>}
+                        <a href="/create"><img id="feather-img" src={featherimg} style={{ width: 50, height: 50 }} alt="dashborad icon" title="create"/></a>
+                        <a href="/me"><img id="smile-img" src={smileimg} style={{ width: 50, height: 50 }} alt="dashborad icon" title="profile"/></a>
                     </div>
                 </nav>
             </header>

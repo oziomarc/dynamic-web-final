@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import Header from "../components/Header";
 import { getFirestore, collection, getDocs } from "firebase/firestore"
+import LetterPost from "../components/LetterPost";
 
 const queryData = async (app) => {
     if(!app) return [];
@@ -10,7 +11,8 @@ const queryData = async (app) => {
     const querySnapshot = await getDocs(collection(db, "letters"))
     const data = []
     querySnapshot.forEach((doc) => {
-        data.push(doc.data())
+        const pushData = doc.data()
+        data.push(pushData)
     });
     return data;
 }
@@ -23,13 +25,10 @@ function Dashboard({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUser
         if(!isLoggedIn && !isLoading) navigate('/dashboard');
     }, [isLoggedIn, isLoading, navigate])
 
-       
-    
-
     useEffect(() => {
         if(!app) return;
         queryData(app).then(setLetterData)
-    },[app])
+    }, [app])
 
     console.log({letterData})
 
@@ -43,7 +42,15 @@ function Dashboard({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUser
             />
             <div className="pageWrapper">
                 <h1>Dashboard</h1>
-                {letterData.map}
+                <div className="dashPageWrapper">
+                    {letterData.map((letter) => (
+                    <LetterPost
+                        letterText={letter.letterText}
+                        displayName={letter.displayName}
+                    />
+                    ))}
+                </div>
+                
             </div>
         </>
     )

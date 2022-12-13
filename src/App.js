@@ -21,13 +21,13 @@ const firebaseConfig = {
 
 
 function App() {
-  const [appInitialized, setAppInitialized] = useState(false);
+  const [appInitialized, setAppInitialized] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
-    initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
     setAppInitialized(true)
   },[]) // runs once after the first render
 
@@ -53,6 +53,7 @@ function App() {
     {
       path: "/",
       element: <Landing // maybe don't need this if user is logged in? 
+      app={appInitialized}
         isLoading={isLoading}
         userInfo={userInfo}
         isLoggedIn={isLoggedIn}
@@ -91,6 +92,7 @@ function App() {
       path: "/dashboard",
       element: 
         <Dashboard 
+        app={appInitialized}
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setUserInfo={setUserInfo}
@@ -102,7 +104,7 @@ function App() {
       path: "/create",
       element: 
         <Createpost 
-        app={initializeApp}
+        app={appInitialized}
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setUserInfo={setUserInfo}

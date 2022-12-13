@@ -8,6 +8,7 @@ body {
 h1 {
     font-family: Georgia, serif;
     font-size: 92px;
+    font-weight: 400;
     margin: 0;
     padding: 0;
 }
@@ -24,6 +25,9 @@ h6 {
 button:hover {
     cursor: pointer;
 }
+header {
+    border-bottom: 1px solid black;
+}
 nav {
     display: flex;
     flex-direction: row;
@@ -39,26 +43,51 @@ nav h3 {
     display: flex;
     flex-direction: column;
 }
-.rightnav {
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    width: 40%;
+.leftnav p {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .leftnav button {
     background-color: rgb(231, 234, 222);
     border: 1px solid black;
     border-radius: 45px;
-    font-size: 20px;
-    font-weight: 250;
-    margin-bottom: 10px;
-    padding: 15px;
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 10px;
+    padding: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
+.leftnav button:hover {
+    background-color: black;
+    color: rgb(231, 234, 222);
+}
+.rightnav {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 100px;
+    width: 40%;
+}
 .rightnav img {
-    border: 1px solid black;
+    border: 1.5px solid black;
     border-radius: 100%;
+    padding: 20px;
+}
+#dash-img:hover {
+    background-color: #E8E3EB;
+}
+#feather-img:hover {
+    background-color: #D5E8DF;
+}
+#smile-img:hover {
+    background-color: #F6F2E4;
+}
+.rightnav img {
+    /* border: 1px solid black;
+    border-radius: 100%; */
     height: 100px;
     width: 100px;
 }
@@ -71,10 +100,136 @@ nav h3 {
     background-color: rgb(231, 234, 222);
     border: 1px solid black;
     border-radius: 45px;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 250;
-    padding: 15px;
+    padding: 25px;
     padding-top: 8px;
     padding-bottom: 8px;
     margin-bottom: 10px;
+}
+.buttonContainer button:hover {
+    background-color: black;
+    color: rgb(231, 234, 222);
+}
+/* CREATE POST */
+.prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F6F2E4;
+    height: 100px;
+    margin-bottom: 50px;
+    width: 1000px;
+}
+.prompt p {
+    font-size: 60px;
+    font-weight: 600;
+}
+.letterForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.letterForm button {
+    background-color: rgb(231, 234, 222);
+    border: 1px solid black;
+    border-radius: 45px;
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: 10px;
+    padding: 35px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.letterForm button:hover {
+    background-color: black;
+    color: rgb(231, 234, 222);
+}
+.letterForm input[type="text"] {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-size: 40px;
+    font-weight: 300;
+    height: 576px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    padding: 15px;
+    width: 1000px;
+}
+.hero-images img {
+    padding: 20px;
+    opacity: 90%;
+}
+.hero-images {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.hero-images #img2{
+    padding-top: 200px;
+}
+.hero-images #img3{
+    padding-top: 400px;
+}
+/* PROFILE */
+.profilePage p {
+    font-size: 30px;
+    font-weight: 300;
+}
+.lettersWrapper {
+    border: 1px solid black;
+    height: 402px;
+    margin: 30px;
+}
+.likesWrapper {
+    border: 1px solid black;
+    height: 402px;
+    margin: 30px;
+}
+.createPostWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.createPostWrapper p {
+    font-size: 36px;
+}
+/* POSTS */
+.dashPageWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.dashPageWrapper .letterPost {
+ 
+}
+.dashPageWrapper .letterPost .letterText {
+    --w: 10px;
+    --n: 2;
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(clamp(100%/(var(--n) + 1) + 0.1%,var(--w),100%),1fr));
+    margin-left: 8vw;
+    height: 888px;
+    margin: 20px;
+    width: 660px;
+}
+.letterContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+.letterPost {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+.letterText {
+    border: 1px solid black;
+    padding: 20px;
+}
+#authorText {
+    font-size: 18px;
 }

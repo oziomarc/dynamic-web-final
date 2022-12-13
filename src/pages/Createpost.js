@@ -4,11 +4,10 @@ import { useEffect, useCallback, useState } from "react";
 import Header from "../components/Header";
 import CreatepostForm from "../components/CreatepostForm";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { getStorage, ref } from "firebase/storage";
 
 function Createpost({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) {
     const navigate = useNavigate()
-    const [errors, setErrors] = useState();
+    const [postSuccessful, setPostSuccessful] = useState(false)
 
     useEffect(() => {
         if(isLoggedIn && isLoading) navigate('/create');
@@ -24,22 +23,17 @@ function Createpost({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUse
 
         const letterText = e.currentTarget.letterText.value;
         // const stampUrl = "";
-        const author = userInfo.displayName;
+        const displayName = userInfo.displayName;
         const userId = userInfo.uid;
 
         try {
-            // uploadBytes(imageRef, imageToUpload)
-            // .then((snapshot) => {
-            //     // console.log(snapshot)
-            //     return snapshot;
-            // })
-
             const docRef = await addDoc(collection(db, "letters"), {
                 letterText,
                // stampUrl,
-                author,
+                displayName,
                 userId: userId
             });
+            setPostSuccessful(true)
         } catch (e) {
             console.error("error adding document: ", e);
         }
@@ -54,12 +48,15 @@ function Createpost({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUse
                 userInfo={userInfo}
             />
             <div className="pageWrapper">
-                <h1>Create a Post</h1>
-                <div>
-                    <CreatepostForm sendPost={sendPost}/>
-                    <div className="stamps">
-
-                    </div>
+                <div className="createPostWrapper">
+                    <CreatepostForm 
+                    sendPost={sendPost}
+                    // letterText={letterText}
+                    // displayName={displayName}
+                    />
+                    {postSuccessful && <p>letter posted!</p>}
+                    {postSuccessful}
+                    <div className="stamps"></div>
                 </div>
             </div>
         </>
