@@ -2,6 +2,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import SignUpForm from "../components/SignUpForm";
+import { Link } from "react-router-dom";
 
 function Signup({setIsLoggedIn, setUserInfo, isLoggedIn}) {
     const [errors, setErrors] = useState();
@@ -59,8 +60,9 @@ function Signup({setIsLoggedIn, setUserInfo, isLoggedIn}) {
             <div className="pageWrapper">
                 <h1>Carta</h1>
                 <h6>discover one another</h6>
-                <h3>Sign Up</h3>
-                <SignUpForm signUpUser={signUpUser}/>
+                <div className="loginSignup">
+                    <SignUpForm signUpUser={signUpUser}/>
+                </div>
                 <p>{errors}</p>
             </div>
         </>

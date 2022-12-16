@@ -30,8 +30,6 @@ function Dashboard({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUser
         queryData(app).then(setLetterData)
     }, [app])
 
-    console.log({letterData})
-
     return (
         <>
             <Header

@@ -1,8 +1,8 @@
 import React, { useEffect, useCallback, useState } from "react";
 import { useNavigate } from "react-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
-import Header from "../components/Header";
 import LoginForm from "../components/LoginForm.js";
+import { Link } from "react-router-dom";
 
 function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInfo }) {
     const [errors, setErrors] = useState();
@@ -45,9 +45,13 @@ function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInfo }) {
             <div className="pageWrapper">
                 <h1>Carta</h1>
                 <h6>discover one another</h6>
-                <h3>Login</h3>
-                <LoginForm 
-                loginUser={loginUser}/>
+                <div className="loginSignup">
+                    <LoginForm 
+                    loginUser={loginUser}/>
+                    <Link to="/">
+                    </Link>
+                </div>
+
                 <p>{errors}</p>
             </div>
         </>
