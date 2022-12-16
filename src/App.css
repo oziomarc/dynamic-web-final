@@ -250,7 +250,7 @@ nav h3 {
     font-size: 30px;
     font-weight: 300;
 }
-.lettersWrapper {
+/* .lettersWrapper {
     border: 1px solid black;
     height: 402px;
     margin: 30px;
@@ -259,32 +259,51 @@ nav h3 {
     border: 1px solid black;
     height: 402px;
     margin: 30px;
-}
+} */
+/* POSTS */
 .createPostWrapper {
     align-items: center;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-/* POSTS */
 .dashPageWrapper {
     align-items: space-around;
     display: grid;
     grid-gap: 60px;
     grid-template-columns: repeat(auto-fill, minmax(900px,1fr));
 }
-.dashPageWrapper .letterPost {
-    
-}
 .dashPageWrapper .letterPost .letterText {
     height: 888px;
     margin: 20px;
     width: 660px;
 }
+.userLettersWrapper {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 15px;
+    padding: 40px;
+    width: 100%;
+}
+.userLetterText {
+    background-color: #F6F2E4;
+    border: 0.5px solid black;
+    height: 450px;
+    padding: 20px;
+    width: 300px;
+}
+.userLetterText p {
+    font-size: 10px;
+}
 .letterContainer {
     display: flex;
     flex-direction: row;
     margin-top: 80px;
+}
+.userLetterContainer {
+    display: flex;
+    flex-direction: row;
 }
 .letterPost {
     display: flex;

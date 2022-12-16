@@ -64,6 +64,7 @@ function App() {
     {
       path: "/me",
       element: <Profile 
+      app={appInitialized}
         isLoading={isLoading}
         userInfo={userInfo}
         isLoggedIn={isLoggedIn}

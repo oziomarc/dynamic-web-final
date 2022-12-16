@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import LetterPost from "../components/LetterPost";
 import { getFirestore, collection, getDocs } from "firebase/firestore"
+import UserLetters from "../components/UserLetters";
 
 const queryData = async (app) => {
     if(!app) return [];
@@ -27,10 +27,6 @@ function Profile({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserIn
     const [letterData, setLetterData] = useState([])
 
     useEffect(() => {
-        if(!isLoggedIn && !isLoading) navigate('/dashboard');
-    }, [isLoggedIn, isLoading, navigate])
-
-    useEffect(() => {
         if(!app) return;
         queryData(app).then(setLetterData)
     }, [app])
@@ -46,10 +42,10 @@ function Profile({app, isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserIn
             <div className="pageWrapper">
                 <div className="profilePage">
                     <p>{userInfo.displayName}'s letters:</p>
-                    <div className="lettersWrapper">
-                        <div className="dashPageWrapper">
-                            {letterData.map((letter) => (
-                            <LetterPost
+                    <div className="">
+                        <div className="userLettersWrapper">
+                            {userInfo && letterData.map((letter) => (
+                            <UserLetters
                                 letterText={letter.letterText}
                             />
                             ))}
