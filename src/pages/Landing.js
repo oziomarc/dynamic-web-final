@@ -30,9 +30,9 @@ function Landing({isLoading, isLoggedIn, userInfo, setIsLoggedIn, setUserInfo}) 
                     </Link>
                 </div>
                 <div className="hero-images">
-                    <img id="img1" src={letter1} style={{ width: 660, height: 888 }} alt=" icon" />
-                    <img id="img2" src={letter2} style={{ width: 660, height: 888 }} alt=" icon" />
-                    <img id="img3" src={letter3} style={{ width: 660, height: 888 }} alt=" icon" />
+                    <img id="img1" src={letter1} style={{ width: 330, height: 444 }} alt=" icon" />
+                    <img id="img2" src={letter2} style={{ width: 330, height: 444 }} alt=" icon" />
+                    <img id="img3" src={letter3} style={{ width: 330, height: 444 }} alt=" icon" />
                 </div>
             </div>
         </>

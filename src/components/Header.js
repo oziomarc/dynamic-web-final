@@ -35,9 +35,9 @@ function Header({ isLoggedIn, userInfo, setIsLoggedIn, setUserInfo }) {
                         {isLoggedIn && <a href="/"><button onClick={() => logOut()}>sign out</button></a>}
                     </div>
                     <div className="rightnav">
-                        {isLoggedIn && <a href="/dashboard"><img id="dash-img" src={dashboardimg} style={{ width: 50, height: 50 }} alt="dashboard icon" title="dashboard"/></a>}
-                        <a href="/create"><img id="feather-img" src={featherimg} style={{ width: 50, height: 50 }} alt="dashborad icon" title="create"/></a>
-                        <a href="/me"><img id="smile-img" src={smileimg} style={{ width: 50, height: 50 }} alt="dashborad icon" title="profile"/></a>
+                        {isLoggedIn && <a href="/dashboard"><img id="dash-img" src={dashboardimg} style={{ width: 30, height: 30 }} alt="dashboard icon" title="dashboard"/></a>}
+                        <a href="/create"><img id="feather-img" src={featherimg} style={{ width: 30, height: 30 }} alt="dashborad icon" title="create"/></a>
+                        <a href="/me"><img id="smile-img" src={smileimg} style={{ width: 30, height: 30 }} alt="dashborad icon" title="profile"/></a>
                     </div>
                 </nav>
             </header>
